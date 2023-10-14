@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- <ion-title>add-edit</ion-title> -->
+
+    <ion-buttons slot="start" style="margin-left: 20px; font-weight: bold;" (click)="back()">Back</ion-buttons>
+    <ion-title size="medium" class="ion-text-center">Add New Todo</ion-title>
+    <ion-buttons slot="end" style="margin-left: 20px; font-weight: bold;" (click)="save()">Save</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 25px;">
+    <ion-textarea
+      label="ToDo Text"
+      labelPlacement="floating"
+      fill="outline"
+      placeholder="Enter text"
+      [autoGrow]="true"
+      [counter]="true"
+      maxlength="100"
+      [(ngModel)] = "toDo"
+    >
+
+    </ion-textarea>
+
+    <ion-button fill="clear">Clear</ion-button>
+   
+  </div>
+</ion-content>

@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title size="medium" class="ion-text-center">
+      My ToDo
     </ion-title>
+    <ion-buttons slot="end"  style="margin-right: 20px;" (click)="add()">Add</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list [inset]="true">
+    <!-- <ion-item *ngFor="let item of items"></ion-item> -->
+    <ion-item *ngFor="let todo of toDos; let i = index">
+      <!-- <ion-label>{{ todo }}</ion-label> -->
+      <ion-label>{{ todo }}</ion-label>
+      <ion-icon aria-hidden="true" name="create-outline" slot="end" style="margin-right: 10;"></ion-icon>
+      <ion-icon aria-hidden="true" name="trash-outline" slot="end" (click)="delete(i)"></ion-icon>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
